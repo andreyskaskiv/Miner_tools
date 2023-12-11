@@ -45,7 +45,8 @@ def get_device_info(i: int):
     power = nvmlDeviceGetPowerUsage(handle)
     clock_speeds = nvmlDeviceGetClockInfo(handle, NVML_CLOCK_GRAPHICS)
     memory_clock_speeds = nvmlDeviceGetClockInfo(handle, NVML_CLOCK_MEM)
-    return device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds
+    fan_speed = nvmlDeviceGetFanSpeed(handle)
+    return device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds, fan_speed
 
 
 def is_miner_running():
@@ -107,7 +108,8 @@ def main():
         os.system('cls' if os.name == 'nt' else 'clear')
 
         for i in range(deviceCount):
-            device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds = get_device_info(i)
+            device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds, fan_speed = get_device_info(
+                i)
 
             if utilization.gpu < MAX_LOAD and not is_miner_running():
                 run_miner()
@@ -115,7 +117,8 @@ def main():
             if temperature > MAX_TEMP and is_miner_running():
                 stop_miner()
 
-            print_device_info(device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds)
+            print_device_info(device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds,
+                              fan_speed)
 
         time.sleep(5)
 

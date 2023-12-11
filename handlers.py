@@ -42,7 +42,7 @@ def read_and_print_data_from_file(filename: str) -> None:
 
 
 def print_device_info(device_name: str, info: Any, temperature: int, utilization: Any,
-                      power: int, clock_speeds: int, memory_clock_speeds: int):
+                      power: int, clock_speeds: int, memory_clock_speeds: int, fan_speed: int):
     """
     Print device information.
     """
@@ -65,6 +65,7 @@ def print_device_info(device_name: str, info: Any, temperature: int, utilization
     else:
         print(f" Temperature: {Fore.RED}{temperature} C{Style.RESET_ALL}")
 
+    print(f" Fan Speed: {fan_speed}%")
     print(f" Power usage: {Fore.CYAN}{round(power / 1000, 1)} W{Style.RESET_ALL} \n")
 
     file_name = 'data_3080.json' if device_name == "GeForce RTX 3080" else 'data_1080ti.json'
