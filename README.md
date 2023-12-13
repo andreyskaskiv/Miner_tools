@@ -1,5 +1,9 @@
 # Dog
 
+```
+Description
+Dog checks every 5 seconds whether the miner is running (MAX_LOAD) and whether the temperature has exceeded the permissible level (MAX_TEMP)
+```
 ![Dog.png](Dog.png)
 
 
