@@ -4,11 +4,12 @@ import psutil
 from colorama import Fore, Style
 from dotenv import load_dotenv
 from ping3 import ping
+from prettytable import PrettyTable
 from pynvml import *
 from tqdm import tqdm
 
-from handlers import print_device_info
-from profit_parser import profit_parser_from_hashrate
+from handlers import get_device_performance, show_profit_gpu
+from parser_hashrate_selenium import parser_hashrate_selenium
 
 load_dotenv()
 nvmlInit()
@@ -17,8 +18,6 @@ deviceCount = nvmlDeviceGetCount()
 MAX_LOAD = int(os.getenv('MAX_LOAD'))
 MAX_TEMP = int(os.getenv('MAX_TEMP'))
 BAT_PATH = os.getenv('BAT_PATH')
-YOUR_API_KEY = os.getenv('YOUR_API_KEY')
-POWER_COST = os.getenv('POWER_COST')
 
 
 def internet_connected(host: str = '8.8.8.8') -> bool:
@@ -94,10 +93,10 @@ def stop_miner():
             countdown(300)
 
 
-def update_profit_parser(your_api_key, power_cost):
+def update_profit_parser():
     while True:
-        profit_parser_from_hashrate(your_api_key, power_cost)
-        time.sleep(12 * 60 * 60)  # Обновлять каждые 12 часов
+        parser_hashrate_selenium()
+        time.sleep(1 * 60 * 60)  # update every 1 hour
 
 
 def main():
@@ -106,6 +105,11 @@ def main():
     """
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
+
+        table = PrettyTable()
+        table.field_names = ["Num", "Device", "Mem, MB, used", "CCLK", "MCLK", "Util-on",
+                             "Temp", "Fan", "Power"]
+        table.align["Device"] = "l"
 
         for i in range(deviceCount):
             device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds, fan_speed = get_device_info(
@@ -117,12 +121,24 @@ def main():
             if temperature > MAX_TEMP and is_miner_running():
                 stop_miner()
 
-            print_device_info(device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds,
-                              fan_speed)
+            device_data = get_device_performance(device_name, info, temperature, utilization, power, clock_speeds,
+                                                 memory_clock_speeds, fan_speed)
+
+            device_data.insert(0, i + 1)
+
+            table.add_row(device_data)
+
+        print(table)
+
+        file_name = 'get_profit_gpu.json'
+        if os.path.isfile(file_name):
+            show_profit_gpu(file_name)
+        else:
+            print("Connect to hashrate.no ...")
 
         time.sleep(5)
 
 
 if __name__ == "__main__":
-    threading.Thread(target=update_profit_parser, args=(YOUR_API_KEY, POWER_COST)).start()
+    threading.Thread(target=update_profit_parser).start()
     threading.Thread(target=main).start()

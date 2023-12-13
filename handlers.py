@@ -1,79 +1,64 @@
 import json
-import os
-from typing import Any, Dict
+from typing import Dict
 
 from colorama import Fore, Style
+from prettytable import PrettyTable
 
 
-def read_and_print_data_from_file(filename: str) -> None:
+def show_profit_gpu(filename: str) -> None:
     """
-    Reads data from a file and prints it to the console.
+       Reads data from a file and outputs it to the console.
 
-    :param filename: The name of the file.
-    """
+       :param filename: file_name
+       """
     with open(filename, 'r') as f:
         data = json.load(f)
 
-        prev_revenueUSD24 = None
+        table = PrettyTable()
+        table.field_names = ["Coin", "Power", "Revenue", "Profit", "Revenue (24h)", "Profit (24h)"]
+        table.align["Coin"] = "l"
 
-        # print(f"{Fore.BLUE}{data['device']['name']}: {Style.RESET_ALL}")
+        max_revenue = max(item['revenue'] for item in data[:5])
+        max_profit = max(item['profit'] for item in data[:5])
+        max_rev_24h = max(item['rev_24h'] for item in data[:5])
+        max_profit_24h = max(item['profit_24h'] for item in data[:5])
 
-        print(f" Profit: {data['profit']['coin']},"
-              f" RevenueUSD: {round(data['profit']['revenueUSD'], 2)}$,"
-              f" ProfitUSD: {round(data['profit']['profitUSD'], 2)}$")
+        for item in data[:5]:
+            coin = item['coin'].split(' ')[0]
+            power = f"{Fore.YELLOW}{item['power']}{Style.RESET_ALL}"
+            revenue = f"{Fore.GREEN}{item['revenue']}{Style.RESET_ALL}" if item['revenue'] == max_revenue else item[
+                'revenue']
+            profit = f"{Fore.GREEN}{item['profit']}{Style.RESET_ALL}" if item['profit'] == max_profit else item[
+                'profit']
+            rev_24h = f"{Fore.GREEN}{item['rev_24h']}{Style.RESET_ALL}" if item['rev_24h'] == max_rev_24h else item[
+                'rev_24h']
+            profit_24h = f"{Fore.GREEN}{item['profit_24h']}{Style.RESET_ALL}" if item[
+                                                                                     'profit_24h'] == max_profit_24h else \
+                item['profit_24h']
 
-        revenueUSD24 = round(data['profit24']['revenueUSD24'], 2)
-        if prev_revenueUSD24 is None or revenueUSD24 != prev_revenueUSD24:
-            print(f"{Fore.CYAN} Profit24: {data['profit24']['coin']},"
-                  f" RevenueUSD24: {revenueUSD24}$,"
-                  f" ProfitUSD24: {round(data['profit24']['profitUSD24'], 2)}${Style.RESET_ALL}")
-            prev_revenueUSD24 = revenueUSD24
+            table.add_row([coin, power, revenue, profit, rev_24h, profit_24h])
 
-        print(f" Revenue: {data['revenue']['coin']},"
-              f" RevenueUSD: {round(data['revenue']['revenueUSD'], 2)}$,"
-              f" ProfitUSD: {round(data['revenue']['profitUSD'], 2)}$")
-
-        revenueUSD24 = round(data['revenue24']['revenueUSD24'], 2)
-        if prev_revenueUSD24 is None or revenueUSD24 != prev_revenueUSD24:
-            print(f" Revenue24: {data['revenue24']['coin']},"
-                  f" RevenueUSD24: {revenueUSD24}$,"
-                  f" ProfitUSD24: {round(data['revenue24']['profitUSD24'], 2)}$")
-            prev_revenueUSD24 = revenueUSD24
+        print(table)
 
 
-def print_device_info(device_name: str, info: Any, temperature: int, utilization: Any,
-                      power: int, clock_speeds: int, memory_clock_speeds: int, fan_speed: int):
-    """
-    Print device information.
-    """
-
-    print(f"\n{'- ' * 30}\n {Fore.GREEN}{device_name}:{Style.RESET_ALL}")
-
-    print(
-        f"  Memory: {round(info.free / (1024 ** 2), 2)} MB free,"
-        f" {round(info.used / (1024 ** 2), 2)} MB used,"
-        f" {info.total / (1024 ** 2)} MB total")
-
-    print(f"  Clock Speeds: {Fore.CYAN}{clock_speeds} MHz{Style.RESET_ALL}")
-    print(f"  Memory Clock Speeds: {Fore.CYAN}{memory_clock_speeds} MHz{Style.RESET_ALL}")
-    print(f"  Utilization: {utilization.gpu}% \n")
+def get_device_performance(device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds,
+                           fan_speed):
+    memory = f"{round(info.free / (1024 ** 2), 2)} MB free, {round(info.used / (1024 ** 2), 2)} MB used, {info.total / (1024 ** 2)} MB total"
+    utilization_str = f"{utilization.gpu}%"
 
     if temperature <= 35:
-        print(f" Temperature: {Fore.BLUE}{temperature} C{Style.RESET_ALL}")
+        temperature_str = f"{Fore.BLUE}{temperature} C{Style.RESET_ALL}"
     elif 35 < temperature <= 60:
-        print(f" Temperature: {Fore.YELLOW}{temperature} C{Style.RESET_ALL}")
+        temperature_str = f"{Fore.YELLOW}{temperature} C{Style.RESET_ALL}"
     else:
-        print(f" Temperature: {Fore.RED}{temperature} C{Style.RESET_ALL}")
+        temperature_str = f"{Fore.RED}{temperature} C{Style.RESET_ALL}"
 
-    print(f" Fan Speed: {fan_speed}%")
-    print(f" Power usage: {Fore.CYAN}{round(power / 1000, 1)} W{Style.RESET_ALL} \n")
+    fan_speed_str = f"{fan_speed}%"
+    power_str = f"{Fore.CYAN}{round(power / 1000, 1)} W{Style.RESET_ALL}"
 
-    file_name = 'data_3080.json' if device_name == "GeForce RTX 3080" else 'data_1080ti.json'
-
-    if os.path.isfile(file_name):
-        read_and_print_data_from_file(file_name)
-    else:
-        print("Connect to hashrate.no ...")
+    return [f"{Fore.GREEN}{device_name}{Style.RESET_ALL}", memory,
+            f"{Fore.CYAN}{clock_speeds} MHz{Style.RESET_ALL}", f"{Fore.CYAN}{memory_clock_speeds} MHz{Style.RESET_ALL}",
+            utilization_str, temperature_str, fan_speed_str, power_str]
 
 
 def print_json_data(json_data: Dict) -> None:
