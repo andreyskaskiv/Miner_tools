@@ -3,9 +3,11 @@ from typing import Dict
 
 from colorama import Fore, Style
 from prettytable import PrettyTable
+from settings import MINER_PATHS
 
 
-def show_profit_gpu(filename: str) -> None:
+def show_profit_gpu(filename: str) -> list:
+    NUMBER_OF_LINES = 8
     """
        Reads data from a file and outputs it to the console.
 
@@ -15,30 +17,33 @@ def show_profit_gpu(filename: str) -> None:
         data = json.load(f)
 
         table = PrettyTable()
-        table.field_names = ["Coin", "Power", "Revenue", "Profit", "Revenue (24h)", "Profit (24h)"]
+        table.field_names = ["Coin", "Hashrate", "Power", "Revenue", "Profit", "Revenue (24h)", "Profit (24h)"]
         table.align["Coin"] = "l"
 
-        max_revenue = max(item['revenue'] for item in data[:5])
-        max_profit = max(item['profit'] for item in data[:5])
-        max_rev_24h = max(item['rev_24h'] for item in data[:5])
-        max_profit_24h = max(item['profit_24h'] for item in data[:5])
+        max_revenue = max(item['revenue'] for item in data[:NUMBER_OF_LINES])
+        max_profit = max(item['profit'] for item in data[:NUMBER_OF_LINES])
+        max_rev_24h = max(item['rev_24h'] for item in data[:NUMBER_OF_LINES])
+        max_profit_24h = max(item['profit_24h'] for item in data[:NUMBER_OF_LINES])
 
-        for item in data[:5]:
-            coin = item['coin'].split(' ')[0]
+        coins = []
+
+        for item in data[:NUMBER_OF_LINES]:
+            coin = f"{Fore.YELLOW}{item['coin'].split(' ')[0]}{Style.RESET_ALL}" if item['coin'] in MINER_PATHS else item['coin'].split(' ')[0]
+            coins.append(item['coin'].split(' ')[0])
+
+            hashrate = item['hashrate']
             power = f"{Fore.YELLOW}{item['power']}{Style.RESET_ALL}"
-            revenue = f"{Fore.GREEN}{item['revenue']}{Style.RESET_ALL}" if item['revenue'] == max_revenue else item[
-                'revenue']
-            profit = f"{Fore.GREEN}{item['profit']}{Style.RESET_ALL}" if item['profit'] == max_profit else item[
-                'profit']
-            rev_24h = f"{Fore.GREEN}{item['rev_24h']}{Style.RESET_ALL}" if item['rev_24h'] == max_rev_24h else item[
-                'rev_24h']
-            profit_24h = f"{Fore.GREEN}{item['profit_24h']}{Style.RESET_ALL}" if item[
-                                                                                     'profit_24h'] == max_profit_24h else \
-                item['profit_24h']
+            revenue = f"{Fore.GREEN}{item['revenue']}{Style.RESET_ALL}" if item['revenue'] == max_revenue else item['revenue']
+            profit = f"{Fore.GREEN}{item['profit']}{Style.RESET_ALL}" if item['profit'] == max_profit else item['profit']
+            rev_24h = f"{Fore.GREEN}{item['rev_24h']}{Style.RESET_ALL}" if item['rev_24h'] == max_rev_24h else item['rev_24h']
+            profit_24h = f"{Fore.GREEN}{item['profit_24h']}{Style.RESET_ALL}" if item['profit_24h'] == max_profit_24h else item['profit_24h']
 
-            table.add_row([coin, power, revenue, profit, rev_24h, profit_24h])
+            table.add_row([coin, hashrate, power, revenue, profit, rev_24h, profit_24h])
 
         print(table)
+        return coins
+
+
 
 
 def get_device_performance(device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds,

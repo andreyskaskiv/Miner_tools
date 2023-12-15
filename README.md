@@ -18,14 +18,19 @@ Dog checks every 5 seconds whether the miner is running (MAX_LOAD) and whether t
       ....
    ```
 
-4. Add your constants to the .env file
-    ```
-    MAX_LOAD=80
-    MAX_TEMP=60
-    BAT_PATH=G:\\Miner\\1.80a\\1_mine_karlsen.bat
-    YOUR_API_KEY=6921d42,kgb8ghffa009dc4f8hjkfhje4fg505db43fgha2e
-    POWER_COST=0.07
-    ```
+4. Add your constants to the `settings.py` file
+
+   ```
+   MAX_LOAD = 80
+   MAX_TEMP = 60
+   ELECTRICITY_COST = 0.07
+   
+   MINER_PATHS = {
+       "Pyrin": r"G:\\Miner\\1.81\\Pyrin.bat",
+       "Karlsen": r"G:\\Miner\\1.81\\Karlsen.bat",
+       "Alephium":  r"G:\\Miner\\1.81\\Alephium.bat",
+   }
+   ```
 
 5. Set absolute path for lolMiner.exe file
 

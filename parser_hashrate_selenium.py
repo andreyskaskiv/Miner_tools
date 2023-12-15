@@ -1,5 +1,4 @@
 import json
-import os
 
 import requests
 from bs4 import BeautifulSoup
@@ -9,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-ELECTRICITY_COST = str(os.getenv('POWER_COST'))
+from settings import ELECTRICITY_COST
 
 
 def initialize_driver() -> webdriver.Chrome:
@@ -52,13 +51,13 @@ def input_data(driver: webdriver.Chrome, data_xpath_kwh: str, value: str) -> Non
 
 def fetch_data(driver: webdriver.Chrome) -> list:
     """
-    Extracts data from the HTML code.
+    Extracts data from the HTML code, including the new Hashrate value.
 
     Args:
       driver (webdriver): The browser driver object.
 
     Returns:
-      list: Extracted data.
+      list: Extracted data with Hashrate added.
     """
     html_content = driver.page_source
     soup = BeautifulSoup(html_content, 'lxml')
@@ -68,6 +67,7 @@ def fetch_data(driver: webdriver.Chrome) -> list:
     data = []
     for element in elements:
         coin = element.select_one('div.w3-col.l3.m12.s12 .deviceHeader').text
+        hashrate = element.select_one('div.w3-col.l4.m12.s12 table tbody tr td:nth-of-type(1)').text
         power = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td').text
         revenue = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td:nth-of-type(2)').text
         profit = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td:nth-of-type(3)').text
@@ -76,6 +76,7 @@ def fetch_data(driver: webdriver.Chrome) -> list:
 
         data.append({
             'coin': coin,
+            'hashrate': hashrate,
             'power': power,
             'revenue': revenue,
             'profit': profit,
