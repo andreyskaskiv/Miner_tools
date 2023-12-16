@@ -1,533 +1,137 @@
 [
     {
-        "coin": "Pyrin",
-        "hashrate": "7.95 Gh/s",
-        "power": "246.00 w",
-        "revenue": "$1.68 ",
-        "profit": "$1.27 ",
-        "rev_24h": "$3.41 ",
-        "profit_24h": "$3.00 "
-    },
-    {
         "coin": "Clore",
         "hashrate": "66.07 Mh/s",
         "power": "429.00 w",
-        "revenue": "$1.94 ",
-        "profit": "$1.22 ",
+        "revenue": "$1.91 ",
+        "profit": "$1.19 ",
+        "rev_24h": "$1.76 ",
+        "profit_24h": "$1.03 "
+    },
+    {
+        "coin": "Pyrin",
+        "hashrate": "7.95 Gh/s",
+        "power": "246.00 w",
+        "revenue": "$1.54 ",
+        "profit": "$1.12 ",
         "rev_24h": "$1.72 ",
-        "profit_24h": "$1.00 "
+        "profit_24h": "$1.31 "
     },
     {
         "coin": "Neurai",
         "hashrate": "66.07 Mh/s",
         "power": "429.00 w",
-        "revenue": "$1.87 ",
-        "profit": "$1.15 ",
-        "rev_24h": "$1.65 ",
-        "profit_24h": "$0.93 "
+        "revenue": "$1.68 ",
+        "profit": "$0.96 ",
+        "rev_24h": "$1.63 ",
+        "profit_24h": "$0.91 "
     },
     {
         "coin": "Karlsen",
         "hashrate": "1948.00 Mh/s",
         "power": "203.00 w",
-        "revenue": "$1.35 ",
-        "profit": "$1.01 ",
-        "rev_24h": "$1.22 ",
-        "profit_24h": "$0.88 "
-    },
-    {
-        "coin": "Chinet",
-        "hashrate": "71.42 Mh/s",
-        "power": "469.00 w",
-        "revenue": "$1.74 ",
-        "profit": "$0.95 ",
-        "rev_24h": "$1.86 ",
-        "profit_24h": "$1.07 "
+        "revenue": "$1.27 ",
+        "profit": "$0.93 ",
+        "rev_24h": "$1.35 ",
+        "profit_24h": "$1.01 "
     },
     {
         "coin": "Iron fish",
         "hashrate": "27360.00 Mh/s",
         "power": "249.00 w",
-        "revenue": "$1.31 ",
-        "profit": "$0.90 ",
-        "rev_24h": "$1.16 ",
-        "profit_24h": "$0.74 "
-    },
-    {
-        "coin": "Gain Pro X",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$1.08 ",
-        "profit": "$0.88 ",
-        "rev_24h": "$0.88 ",
-        "profit_24h": "$0.68 "
-    },
-    {
-        "coin": "Alephium",
-        "hashrate": "2.84 Gh/s",
-        "power": "247.00 w",
-        "revenue": "$1.23 ",
-        "profit": "$0.82 ",
-        "rev_24h": "$1.36 ",
-        "profit_24h": "$0.94 "
-    },
-    {
-        "coin": "Paprikacoin",
-        "hashrate": "66.07 Mh/s",
-        "power": "429.00 w",
-        "revenue": "$1.49 ",
-        "profit": "$0.77 ",
-        "rev_24h": "$1.43 ",
-        "profit_24h": "$0.71 "
-    },
-    {
-        "coin": "CortexMinimum 8GB GPU memory",
-        "hashrate": "8.09 Gp/s",
-        "power": "451.00 w",
-        "revenue": "$1.53 ",
-        "profit": "$0.77 ",
-        "rev_24h": "$1.64 ",
-        "profit_24h": "$0.88 "
-    },
-    {
-        "coin": "KiiroCoin",
-        "hashrate": "42.13 Mh/s",
-        "power": "249.00 w",
-        "revenue": "$1.17 ",
-        "profit": "$0.76 ",
-        "rev_24h": "$1.02 ",
-        "profit_24h": "$0.60 "
+        "revenue": "$1.33 ",
+        "profit": "$0.91 ",
+        "rev_24h": "$1.31 ",
+        "profit_24h": "$0.89 "
     },
     {
         "coin": "Zano",
         "hashrate": "71.42 Mh/s",
         "power": "469.00 w",
-        "revenue": "$1.54 ",
-        "profit": "$0.75 ",
-        "rev_24h": "$1.63 ",
-        "profit_24h": "$0.84 "
-    },
-    {
-        "coin": "GamePass",
-        "hashrate": "66.07 Mh/s",
-        "power": "429.00 w",
-        "revenue": "$1.45 ",
-        "profit": "$0.73 ",
-        "rev_24h": "$1.48 ",
-        "profit_24h": "$0.75 "
-    },
-    {
-        "coin": "Bitcoin GOLD",
-        "hashrate": "245.60 Sol/s",
-        "power": "498.00 w",
-        "revenue": "$1.55 ",
-        "profit": "$0.72 ",
-        "rev_24h": "$1.52 ",
-        "profit_24h": "$0.69 "
+        "revenue": "$1.68 ",
+        "profit": "$0.89 ",
+        "rev_24h": "$1.68 ",
+        "profit_24h": "$0.90 "
     },
     {
         "coin": "SatoxCoin",
         "hashrate": "66.07 Mh/s",
         "power": "429.00 w",
-        "revenue": "$1.42 ",
-        "profit": "$0.70 ",
-        "rev_24h": "$1.61 ",
-        "profit_24h": "$0.89 "
+        "revenue": "$1.59 ",
+        "profit": "$0.87 ",
+        "rev_24h": "$1.56 ",
+        "profit_24h": "$0.84 "
+    },
+    {
+        "coin": "CortexMinimum 8GB GPU memory",
+        "hashrate": "8.09 Gp/s",
+        "power": "451.00 w",
+        "revenue": "$1.60 ",
+        "profit": "$0.84 ",
+        "rev_24h": "$1.53 ",
+        "profit_24h": "$0.77 "
+    },
+    {
+        "coin": "Alephium",
+        "hashrate": "2.84 Gh/s",
+        "power": "247.00 w",
+        "revenue": "$1.22 ",
+        "profit": "$0.81 ",
+        "rev_24h": "$1.34 ",
+        "profit_24h": "$0.93 "
+    },
+    {
+        "coin": "Chinet",
+        "hashrate": "71.42 Mh/s",
+        "power": "469.00 w",
+        "revenue": "$1.56 ",
+        "profit": "$0.78 ",
+        "rev_24h": "$1.63 ",
+        "profit_24h": "$0.84 "
     },
     {
         "coin": "Neoxa",
         "hashrate": "66.07 Mh/s",
         "power": "429.00 w",
-        "revenue": "$1.39 ",
-        "profit": "$0.67 ",
-        "rev_24h": "$1.41 ",
-        "profit_24h": "$0.69 "
-    },
-    {
-        "coin": "MecuAI",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.87 ",
-        "profit": "$0.67 ",
-        "rev_24h": "$0.84 ",
-        "profit_24h": "$0.64 "
-    },
-    {
-        "coin": "Reaction",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.86 ",
-        "profit": "$0.66 ",
-        "rev_24h": "$0.84 ",
-        "profit_24h": "$0.64 "
-    },
-    {
-        "coin": "Frencoin",
-        "hashrate": "66.07 Mh/s",
-        "power": "429.00 w",
-        "revenue": "$1.34 ",
-        "profit": "$0.62 ",
-        "rev_24h": "$1.32 ",
-        "profit_24h": "$0.60 "
-    },
-    {
-        "coin": "Maxeter",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.79 ",
-        "profit": "$0.59 ",
-        "rev_24h": "$0.81 ",
-        "profit_24h": "$0.61 "
-    },
-    {
-        "coin": "FluxCalculated with +80% from parallel assets",
-        "hashrate": "155.42 Sol/s",
-        "power": "436.00 w",
-        "revenue": "$1.32 ",
-        "profit": "$0.59 ",
-        "rev_24h": "$1.36 ",
-        "profit_24h": "$0.63 "
+        "revenue": "$1.47 ",
+        "profit": "$0.75 ",
+        "rev_24h": "$1.47 ",
+        "profit_24h": "$0.75 "
     },
     {
         "coin": "Dynex",
         "hashrate": "9830.00 H/s",
         "power": "266.00 w",
-        "revenue": "$1.03 ",
-        "profit": "$0.58 ",
-        "rev_24h": "$1.04 ",
-        "profit_24h": "$0.59 "
+        "revenue": "$1.15 ",
+        "profit": "$0.70 ",
+        "rev_24h": "$1.09 ",
+        "profit_24h": "$0.65 "
     },
     {
-        "coin": "Skytere",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.77 ",
-        "profit": "$0.57 ",
-        "rev_24h": "$0.71 ",
-        "profit_24h": "$0.51 "
-    },
-    {
-        "coin": "Radiant",
-        "hashrate": "1700.00 Mh/s",
-        "power": "249.00 w",
-        "revenue": "$0.94 ",
-        "profit": "$0.52 ",
-        "rev_24h": "$0.95 ",
-        "profit_24h": "$0.53 "
-    },
-    {
-        "coin": "Pepe Pow",
-        "hashrate": "67.51 Mh/s",
-        "power": "159.00 w",
-        "revenue": "$0.79 ",
-        "profit": "$0.52 ",
-        "rev_24h": "$0.65 ",
-        "profit_24h": "$0.38 "
-    },
-    {
-        "coin": "Aeternity",
-        "hashrate": "13.57 Gp/s",
-        "power": "221.00 w",
-        "revenue": "$0.88 ",
-        "profit": "$0.51 ",
-        "rev_24h": "$0.87 ",
-        "profit_24h": "$0.49 "
-    },
-    {
-        "coin": "Nexa",
-        "hashrate": "129.57 Mh/s",
-        "power": "339.00 w",
-        "revenue": "$1.07 ",
-        "profit": "$0.50 ",
-        "rev_24h": "$1.14 ",
-        "profit_24h": "$0.57 "
-    },
-    {
-        "coin": "Varse",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.69 ",
-        "profit": "$0.49 ",
-        "rev_24h": "$0.80 ",
-        "profit_24h": "$0.60 "
-    },
-    {
-        "coin": "Ravencoin",
-        "hashrate": "66.07 Mh/s",
-        "power": "429.00 w",
-        "revenue": "$1.17 ",
-        "profit": "$0.45 ",
-        "rev_24h": "$1.25 ",
-        "profit_24h": "$0.53 "
-    },
-    {
-        "coin": "Skydoge",
-        "hashrate": "20.00 Mh/s",
-        "power": "157.00 w",
-        "revenue": "$0.69 ",
-        "profit": "$0.43 ",
-        "rev_24h": "$0.74 ",
-        "profit_24h": "$0.47 "
-    },
-    {
-        "coin": "Meowcoin",
-        "hashrate": "66.07 Mh/s",
-        "power": "429.00 w",
-        "revenue": "$1.12 ",
-        "profit": "$0.40 ",
-        "rev_24h": "$1.12 ",
-        "profit_24h": "$0.40 "
-    },
-    {
-        "coin": "Conceal",
-        "hashrate": "5650.00 H/s",
-        "power": "285.00 w",
-        "revenue": "$0.88 ",
-        "profit": "$0.40 ",
-        "rev_24h": "$1.01 ",
-        "profit_24h": "$0.53 "
-    },
-    {
-        "coin": "Babacoin",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.56 ",
-        "profit": "$0.36 ",
-        "rev_24h": "$0.60 ",
-        "profit_24h": "$0.40 "
-    },
-    {
-        "coin": "Beam",
-        "hashrate": "72.00 Sol/s",
-        "power": "398.00 w",
-        "revenue": "$1.03 ",
-        "profit": "$0.36 ",
-        "rev_24h": "$1.12 ",
-        "profit_24h": "$0.45 "
-    },
-    {
-        "coin": "Fsociety",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.50 ",
-        "profit": "$0.30 ",
-        "rev_24h": "$0.59 ",
-        "profit_24h": "$0.39 "
-    },
-    {
-        "coin": "Novo",
-        "hashrate": "4240.00 Mh/s",
-        "power": "210.00 w",
-        "revenue": "$0.65 ",
-        "profit": "$0.30 ",
-        "rev_24h": "$0.71 ",
-        "profit_24h": "$0.36 "
-    },
-    {
-        "coin": "Firo",
+        "coin": "KiiroCoin",
         "hashrate": "42.13 Mh/s",
         "power": "249.00 w",
-        "revenue": "$0.71 ",
-        "profit": "$0.30 ",
-        "rev_24h": "$0.71 ",
-        "profit_24h": "$0.29 "
-    },
-    {
-        "coin": "Evolution",
-        "hashrate": "71.42 Mh/s",
-        "power": "469.00 w",
         "revenue": "$1.06 ",
-        "profit": "$0.27 ",
-        "rev_24h": "$1.28 ",
-        "profit_24h": "$0.49 "
+        "profit": "$0.64 ",
+        "rev_24h": "$1.08 ",
+        "profit_24h": "$0.66 "
     },
     {
-        "coin": "Raptoreum",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.43 ",
-        "profit": "$0.23 ",
-        "rev_24h": "$0.34 ",
-        "profit_24h": "$0.14 "
+        "coin": "Bitcoin GOLD",
+        "hashrate": "245.60 Sol/s",
+        "power": "498.00 w",
+        "revenue": "$1.46 ",
+        "profit": "$0.63 ",
+        "rev_24h": "$1.51 ",
+        "profit_24h": "$0.68 "
     },
     {
-        "coin": "Ergo",
-        "hashrate": "290.81 Mh/s",
-        "power": "362.00 w",
-        "revenue": "$0.83 ",
-        "profit": "$0.22 ",
-        "rev_24h": "$0.95 ",
-        "profit_24h": "$0.34 "
-    },
-    {
-        "coin": "Rethereum",
-        "hashrate": "97.34 Mh/s",
-        "power": "240.00 w",
-        "revenue": "$0.61 ",
-        "profit": "$0.21 ",
-        "rev_24h": "$0.64 ",
-        "profit_24h": "$0.24 "
-    },
-    {
-        "coin": "Vertcoin",
-        "hashrate": "2053.60 Kh/s",
-        "power": "266.00 w",
-        "revenue": "$0.58 ",
-        "profit": "$0.14 ",
-        "rev_24h": "$0.59 ",
-        "profit_24h": "$0.14 "
-    },
-    {
-        "coin": "Kylacoin",
-        "hashrate": "1165.96 Mh/s",
-        "power": "232.00 w",
-        "revenue": "$0.48 ",
-        "profit": "$0.09 ",
-        "rev_24h": "$0.44 ",
-        "profit_24h": "$0.05 "
-    },
-    {
-        "coin": "Bitoreum",
-        "hashrate": "1987.00 H/s",
-        "power": "119.00 w",
-        "revenue": "$0.29 ",
-        "profit": "$0.09 ",
-        "rev_24h": "$0.32 ",
-        "profit_24h": "$0.12 "
-    },
-    {
-        "coin": "Canxium",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.76 ",
-        "profit": "$0.06 ",
-        "rev_24h": "$0.71 ",
-        "profit_24h": "$0.00 "
-    },
-    {
-        "coin": "Conflux",
-        "hashrate": "90.73 Mh/s",
-        "power": "260.00 w",
-        "revenue": "$0.49 ",
-        "profit": "$0.05 ",
-        "rev_24h": "$0.50 ",
-        "profit_24h": "$0.06 "
-    },
-    {
-        "coin": "Avian",
-        "hashrate": "30.14 Mh/s",
-        "power": "171.00 w",
-        "revenue": "$0.31 ",
-        "profit": "$0.03 ",
-        "rev_24h": "$0.31 ",
-        "profit_24h": "$0.02 "
-    },
-    {
-        "coin": "Grin",
-        "hashrate": "1.04 Gp/s",
-        "power": "289.00 w",
-        "revenue": "$0.49 ",
-        "profit": "$0.01 ",
-        "rev_24h": "$0.54 ",
-        "profit_24h": "$0.05 "
-    },
-    {
-        "coin": "Bitnet Money",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.68 ",
-        "profit": "$-0.03 ",
-        "rev_24h": "$0.67 ",
-        "profit_24h": "$-0.03 "
-    },
-    {
-        "coin": "PowBlocks",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.65 ",
-        "profit": "$-0.06 ",
-        "rev_24h": "$0.66 ",
-        "profit_24h": "$-0.05 "
-    },
-    {
-        "coin": "Aves",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.65 ",
-        "profit": "$-0.06 ",
-        "rev_24h": "$0.64 ",
-        "profit_24h": "$-0.06 "
-    },
-    {
-        "coin": "Haven Protocol",
-        "hashrate": "3110.00 H/s",
-        "power": "245.00 w",
-        "revenue": "$0.35 ",
-        "profit": "$-0.07 ",
-        "rev_24h": "$0.44 ",
-        "profit_24h": "$0.03 "
-    },
-    {
-        "coin": "OctaSpace",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.58 ",
-        "profit": "$-0.13 ",
-        "rev_24h": "$0.60 ",
-        "profit_24h": "$-0.11 "
-    },
-    {
-        "coin": "Etica",
-        "hashrate": "2440.00 Mh/s",
-        "power": "202.00 w",
-        "revenue": "$0.20 ",
-        "profit": "$-0.14 ",
-        "rev_24h": "$0.21 ",
-        "profit_24h": "$-0.13 "
-    },
-    {
-        "coin": "EthereumFair",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.40 ",
-        "profit": "$-0.31 ",
-        "rev_24h": "$0.39 ",
-        "profit_24h": "$-0.32 "
-    },
-    {
-        "coin": "Ethereum Classic",
-        "hashrate": "150.12 Mh/s",
-        "power": "393.00 w",
-        "revenue": "$0.33 ",
-        "profit": "$-0.33 ",
-        "rev_24h": "$0.35 ",
-        "profit_24h": "$-0.31 "
-    },
-    {
-        "coin": "EGAZ",
-        "hashrate": "150.12 Mh/s",
-        "power": "393.00 w",
-        "revenue": "$0.32 ",
-        "profit": "$-0.34 ",
-        "rev_24h": "$0.33 ",
-        "profit_24h": "$-0.33 "
-    },
-    {
-        "coin": "Ethereum POW",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.34 ",
-        "profit": "$-0.37 ",
-        "rev_24h": "$0.33 ",
-        "profit_24h": "$-0.38 "
-    },
-    {
-        "coin": "Callisto Network",
-        "hashrate": "142.15 Mh/s",
-        "power": "421.00 w",
-        "revenue": "$0.32 ",
-        "profit": "$-0.39 ",
-        "rev_24h": "$0.35 ",
-        "profit_24h": "$-0.36 "
+        "coin": "FluxCalculated with +80% from parallel assets",
+        "hashrate": "155.42 Sol/s",
+        "power": "436.00 w",
+        "revenue": "$1.33 ",
+        "profit": "$0.60 ",
+        "rev_24h": "$1.26 ",
+        "profit_24h": "$0.53 "
     }
 ]

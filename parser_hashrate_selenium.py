@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from settings import ELECTRICITY_COST
+from settings import ELECTRICITY_COST, URL_hashrate_no
 
 
 def initialize_driver() -> webdriver.Chrome:
@@ -61,29 +61,27 @@ def fetch_data(driver: webdriver.Chrome) -> list:
     """
     html_content = driver.page_source
     soup = BeautifulSoup(html_content, 'lxml')
-
     elements = soup.select('a.deviceLink')
 
     data = []
-    for element in elements:
-        coin = element.select_one('div.w3-col.l3.m12.s12 .deviceHeader').text
-        hashrate = element.select_one('div.w3-col.l4.m12.s12 table tbody tr td:nth-of-type(1)').text
-        power = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td').text
-        revenue = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td:nth-of-type(2)').text
-        profit = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td:nth-of-type(3)').text
-        rev_24h = element.select_one('div.w3-col.l5.m12.s12 table tbody tr:nth-of-type(3) td:nth-of-type(2)').text
-        profit_24h = element.select_one('div.w3-col.l5.m12.s12 table tbody tr:nth-of-type(3) td:nth-of-type(3)').text
+    for element in elements[:15]:
+        coin = element.select_one('div.w3-col.l3.m12.s12 .deviceHeader')
+        hash_rate = element.select_one('div.w3-col.l4.m12.s12 table tbody tr td:nth-of-type(1)')
+        power = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td')
+        revenue = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td:nth-of-type(2)')
+        profit = element.select_one('div.w3-col.l5.m12.s12 table tbody tr td:nth-of-type(3)')
+        rev_24h = element.select_one('div.w3-col.l5.m12.s12 table tbody tr:nth-of-type(3) td:nth-of-type(2)')
+        profit_24h = element.select_one('div.w3-col.l5.m12.s12 table tbody tr:nth-of-type(3) td:nth-of-type(3)')
 
         data.append({
-            'coin': coin,
-            'hashrate': hashrate,
-            'power': power,
-            'revenue': revenue,
-            'profit': profit,
-            'rev_24h': rev_24h,
-            'profit_24h': profit_24h,
+            'coin': coin.text if coin else None,
+            'hashrate': hash_rate.text if hash_rate else None,
+            'power': power.text if power else None,
+            'revenue': revenue.text if revenue else None,
+            'profit': profit.text if profit else None,
+            'rev_24h': rev_24h.text if rev_24h else None,
+            'profit_24h': profit_24h.text if profit_24h else None,
         })
-
     return data
 
 
@@ -92,13 +90,14 @@ def close_driver(driver: webdriver.Chrome) -> None:
     driver.quit()
 
 
-def write_to_file(filename, obj):
+def write_to_file(filename: str, obj: list) -> None:
     with open(filename, 'w', encoding='utf-8') as file:
         json.dump(obj, file, ensure_ascii=False, indent=4)
 
 
 def parser_hashrate_selenium() -> None:
-    URL = "https://hashrate.no/GPUcalculator?3080=1&1080ti=1"
+    URL = URL_hashrate_no
+
     DATA_XPATH_KWH = "//input[@class='calcBoxInput' and @name='kwh']"
     CLICK_BUTTON_CALCULATOR = "inputSubmit"
 

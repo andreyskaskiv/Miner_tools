@@ -3,11 +3,12 @@ from typing import Dict
 
 from colorama import Fore, Style
 from prettytable import PrettyTable
+
 from settings import MINER_PATHS
 
 
 def show_profit_gpu(filename: str) -> list:
-    NUMBER_OF_LINES = 8
+    NUMBER_OF_LINES = 10
     """
        Reads data from a file and outputs it to the console.
 
@@ -20,30 +21,44 @@ def show_profit_gpu(filename: str) -> list:
         table.field_names = ["Coin", "Hashrate", "Power", "Revenue", "Profit", "Revenue (24h)", "Profit (24h)"]
         table.align["Coin"] = "l"
 
-        max_revenue = max(item['revenue'] for item in data[:NUMBER_OF_LINES])
-        max_profit = max(item['profit'] for item in data[:NUMBER_OF_LINES])
-        max_rev_24h = max(item['rev_24h'] for item in data[:NUMBER_OF_LINES])
-        max_profit_24h = max(item['profit_24h'] for item in data[:NUMBER_OF_LINES])
+        max_revenue = max(item.get('revenue', None) for item in data[:NUMBER_OF_LINES])
+        max_profit = max(item.get('profit', None) for item in data[:NUMBER_OF_LINES])
+        max_rev_24h = max(item.get('rev_24h', None) for item in data[:NUMBER_OF_LINES])
+        max_profit_24h = max(item.get('profit_24h', None) for item in data[:NUMBER_OF_LINES])
 
         coins = []
 
         for item in data[:NUMBER_OF_LINES]:
-            coin = f"{Fore.YELLOW}{item['coin'].split(' ')[0]}{Style.RESET_ALL}" if item['coin'] in MINER_PATHS else item['coin'].split(' ')[0]
-            coins.append(item['coin'].split(' ')[0])
+            coins.append(item.get('coin', None).split(' ')[0])
 
-            hashrate = item['hashrate']
-            power = f"{Fore.YELLOW}{item['power']}{Style.RESET_ALL}"
-            revenue = f"{Fore.GREEN}{item['revenue']}{Style.RESET_ALL}" if item['revenue'] == max_revenue else item['revenue']
-            profit = f"{Fore.GREEN}{item['profit']}{Style.RESET_ALL}" if item['profit'] == max_profit else item['profit']
-            rev_24h = f"{Fore.GREEN}{item['rev_24h']}{Style.RESET_ALL}" if item['rev_24h'] == max_rev_24h else item['rev_24h']
-            profit_24h = f"{Fore.GREEN}{item['profit_24h']}{Style.RESET_ALL}" if item['profit_24h'] == max_profit_24h else item['profit_24h']
+            coin = (f"{Fore.YELLOW}{item.get('coin', None).split(' ')[0]}{Style.RESET_ALL}"
+                    if item.get('coin', None) in MINER_PATHS
+                    else item.get('coin', None).split(' ')[0])
+
+            hashrate = item.get('hashrate', None)
+
+            power = f"{Fore.YELLOW}{item.get('power', None)}{Style.RESET_ALL}"
+
+            revenue = (f"{Fore.GREEN}{item.get('revenue', None)}{Style.RESET_ALL}"
+                       if item.get('revenue', None) == max_revenue
+                       else item.get('revenue', None))
+
+            profit = (f"{Fore.GREEN}{item.get('profit', None)}{Style.RESET_ALL}"
+                      if item.get('profit', None) == max_profit
+                      else item.get('profit', None))
+
+            rev_24h = (f"{Fore.GREEN}{item.get('rev_24h', None)}{Style.RESET_ALL}"
+                       if item.get('rev_24h', None) == max_rev_24h
+                       else item.get('rev_24h', None))
+
+            profit_24h = (f"{Fore.GREEN}{item.get('profit_24h', None)}{Style.RESET_ALL}"
+                          if item.get('profit_24h', None) == max_profit_24h
+                          else item.get('profit_24h', None))
 
             table.add_row([coin, hashrate, power, revenue, profit, rev_24h, profit_24h])
 
         print(table)
         return coins
-
-
 
 
 def get_device_performance(device_name, info, temperature, utilization, power, clock_speeds, memory_clock_speeds,
@@ -64,34 +79,3 @@ def get_device_performance(device_name, info, temperature, utilization, power, c
     return [f"{Fore.GREEN}{device_name}{Style.RESET_ALL}", memory,
             f"{Fore.CYAN}{clock_speeds} MHz{Style.RESET_ALL}", f"{Fore.CYAN}{memory_clock_speeds} MHz{Style.RESET_ALL}",
             utilization_str, temperature_str, fan_speed_str, power_str]
-
-
-def print_json_data(json_data: Dict) -> None:
-    """
-    Prints the JSON data to the console.
-
-    :param json_data: The JSON data.
-    """
-    print(json.dumps(json_data, indent=4))
-
-
-def read_and_print_json_data_from_file(filename: str) -> None:
-    """
-    Reads data from a file and prints it to the console.
-
-    :param filename: The name of the file.
-    """
-    with open(filename, 'r') as f:
-        data = json.load(f)
-        print_json_data(data)
-
-
-def write_data_to_file(filename: str, data: Dict) -> None:
-    """
-    Writes data to a file.
-
-    :param filename: The name of the file.
-    :param data: The data to write.
-    """
-    with open(filename, 'w') as f:
-        json.dump(data, f)

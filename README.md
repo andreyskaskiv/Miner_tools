@@ -10,20 +10,13 @@ Dog checks every 5 seconds whether the miner is running (MAX_LOAD) and whether t
 
 1. cd Miner_tools
 2. `pip install -r requirements.txt`
-3. Fill out the calculator and copy the link to a file `parser_hashrate_selenium.py`
-
-   ```pycon
-   def parser_hashrate_selenium() -> None:
-       URL = "https://hashrate.no/GPUcalculator?3080=1&1080ti=1"
-      ....
-   ```
-
-4. Add your constants to the `settings.py` file
+3. Add your constants to the `settings.py` file
 
    ```
    MAX_LOAD = 80
    MAX_TEMP = 60
    ELECTRICITY_COST = 0.07
+   URL_hashrate_no = "https://hashrate.no/GPUcalculator?3080=1&1080ti=1"
    
    MINER_PATHS = {
        "Pyrin": r"G:\\Miner\\1.81\\Pyrin.bat",
@@ -32,7 +25,7 @@ Dog checks every 5 seconds whether the miner is running (MAX_LOAD) and whether t
    }
    ```
 
-5. Set absolute path for lolMiner.exe file
+4. Set absolute path for lolMiner.exe file
 
     ```
     @echo off
@@ -40,7 +33,7 @@ Dog checks every 5 seconds whether the miner is running (MAX_LOAD) and whether t
     pause
     ```
 
-6. cmd
+5. cmd
     ```pycon
     python .\DoG.py
     ```

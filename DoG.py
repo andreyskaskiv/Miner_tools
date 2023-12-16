@@ -98,7 +98,7 @@ def stop_miner():
 def update_profit_parser():
     while True:
         parser_hashrate_selenium()
-        time.sleep(1 * 30 * 60)
+        time.sleep(1 * 10 * 60)
 
 
 def find_miner_coin(coins: list, miner_paths: dict):
@@ -150,7 +150,6 @@ def main():
                 profit_coin = find_miner_coin(coins, MINER_PATHS)
 
                 if bat_miner_name != profit_coin:
-                    # print(f"{bat_miner_name} != {profit_coin}")
                     stop_miner()
 
             device_data = get_device_performance(device_name, info, temperature, utilization, power, clock_speeds,
