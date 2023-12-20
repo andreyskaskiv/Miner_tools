@@ -1,137 +1,137 @@
 [
     {
-        "coin": "Clore",
-        "hashrate": "66.07 Mh/s",
-        "power": "429.00 w",
-        "revenue": "$1.91 ",
-        "profit": "$1.19 ",
-        "rev_24h": "$1.76 ",
-        "profit_24h": "$1.03 "
-    },
-    {
         "coin": "Pyrin",
         "hashrate": "7.95 Gh/s",
         "power": "246.00 w",
-        "revenue": "$1.54 ",
-        "profit": "$1.12 ",
-        "rev_24h": "$1.72 ",
-        "profit_24h": "$1.31 "
+        "revenue": "$1.55 ",
+        "profit": "$1.13 ",
+        "rev_24h": "$1.47 ",
+        "profit_24h": "$1.05 "
+    },
+    {
+        "coin": "Clore",
+        "hashrate": "66.07 Mh/s",
+        "power": "429.00 w",
+        "revenue": "$1.64 ",
+        "profit": "$0.92 ",
+        "rev_24h": "$1.55 ",
+        "profit_24h": "$0.83 "
     },
     {
         "coin": "Neurai",
         "hashrate": "66.07 Mh/s",
         "power": "429.00 w",
-        "revenue": "$1.68 ",
-        "profit": "$0.96 ",
-        "rev_24h": "$1.63 ",
-        "profit_24h": "$0.91 "
-    },
-    {
-        "coin": "Karlsen",
-        "hashrate": "1948.00 Mh/s",
-        "power": "203.00 w",
-        "revenue": "$1.27 ",
-        "profit": "$0.93 ",
-        "rev_24h": "$1.35 ",
-        "profit_24h": "$1.01 "
-    },
-    {
-        "coin": "Iron fish",
-        "hashrate": "27360.00 Mh/s",
-        "power": "249.00 w",
-        "revenue": "$1.33 ",
-        "profit": "$0.91 ",
-        "rev_24h": "$1.31 ",
-        "profit_24h": "$0.89 "
-    },
-    {
-        "coin": "Zano",
-        "hashrate": "71.42 Mh/s",
-        "power": "469.00 w",
-        "revenue": "$1.68 ",
+        "revenue": "$1.61 ",
         "profit": "$0.89 ",
-        "rev_24h": "$1.68 ",
-        "profit_24h": "$0.90 "
-    },
-    {
-        "coin": "SatoxCoin",
-        "hashrate": "66.07 Mh/s",
-        "power": "429.00 w",
-        "revenue": "$1.59 ",
-        "profit": "$0.87 ",
-        "rev_24h": "$1.56 ",
-        "profit_24h": "$0.84 "
-    },
-    {
-        "coin": "CortexMinimum 8GB GPU memory",
-        "hashrate": "8.09 Gp/s",
-        "power": "451.00 w",
-        "revenue": "$1.60 ",
-        "profit": "$0.84 ",
-        "rev_24h": "$1.53 ",
-        "profit_24h": "$0.77 "
-    },
-    {
-        "coin": "Alephium",
-        "hashrate": "2.84 Gh/s",
-        "power": "247.00 w",
-        "revenue": "$1.22 ",
-        "profit": "$0.81 ",
-        "rev_24h": "$1.34 ",
-        "profit_24h": "$0.93 "
-    },
-    {
-        "coin": "Chinet",
-        "hashrate": "71.42 Mh/s",
-        "power": "469.00 w",
-        "revenue": "$1.56 ",
-        "profit": "$0.78 ",
-        "rev_24h": "$1.63 ",
-        "profit_24h": "$0.84 "
+        "rev_24h": "$1.48 ",
+        "profit_24h": "$0.76 "
     },
     {
         "coin": "Neoxa",
         "hashrate": "66.07 Mh/s",
         "power": "429.00 w",
-        "revenue": "$1.47 ",
-        "profit": "$0.75 ",
-        "rev_24h": "$1.47 ",
-        "profit_24h": "$0.75 "
+        "revenue": "$1.59 ",
+        "profit": "$0.87 ",
+        "rev_24h": "$1.36 ",
+        "profit_24h": "$0.64 "
     },
     {
-        "coin": "Dynex",
-        "hashrate": "9830.00 H/s",
-        "power": "266.00 w",
-        "revenue": "$1.15 ",
-        "profit": "$0.70 ",
-        "rev_24h": "$1.09 ",
-        "profit_24h": "$0.65 "
+        "coin": "SatoxCoin",
+        "hashrate": "66.07 Mh/s",
+        "power": "429.00 w",
+        "revenue": "$1.55 ",
+        "profit": "$0.83 ",
+        "rev_24h": "$1.48 ",
+        "profit_24h": "$0.76 "
     },
     {
-        "coin": "KiiroCoin",
-        "hashrate": "42.13 Mh/s",
+        "coin": "Alephium",
+        "hashrate": "2.84 Gh/s",
+        "power": "247.00 w",
+        "revenue": "$1.23 ",
+        "profit": "$0.82 ",
+        "rev_24h": "$1.31 ",
+        "profit_24h": "$0.90 "
+    },
+    {
+        "coin": "Karlsen",
+        "hashrate": "1948.00 Mh/s",
+        "power": "203.00 w",
+        "revenue": "$1.13 ",
+        "profit": "$0.79 ",
+        "rev_24h": "$1.23 ",
+        "profit_24h": "$0.89 "
+    },
+    {
+        "coin": "Iron fish",
+        "hashrate": "27360.00 Mh/s",
         "power": "249.00 w",
-        "revenue": "$1.06 ",
-        "profit": "$0.64 ",
-        "rev_24h": "$1.08 ",
-        "profit_24h": "$0.66 "
+        "revenue": "$1.20 ",
+        "profit": "$0.78 ",
+        "rev_24h": "$1.16 ",
+        "profit_24h": "$0.74 "
     },
     {
-        "coin": "Bitcoin GOLD",
-        "hashrate": "245.60 Sol/s",
-        "power": "498.00 w",
-        "revenue": "$1.46 ",
-        "profit": "$0.63 ",
-        "rev_24h": "$1.51 ",
-        "profit_24h": "$0.68 "
+        "coin": "Aeternity",
+        "hashrate": "13.57 Gp/s",
+        "power": "221.00 w",
+        "revenue": "$1.04 ",
+        "profit": "$0.66 ",
+        "rev_24h": "$0.74 ",
+        "profit_24h": "$0.37 "
     },
     {
         "coin": "FluxCalculated with +80% from parallel assets",
         "hashrate": "155.42 Sol/s",
         "power": "436.00 w",
-        "revenue": "$1.33 ",
-        "profit": "$0.60 ",
+        "revenue": "$1.38 ",
+        "profit": "$0.65 ",
         "rev_24h": "$1.26 ",
         "profit_24h": "$0.53 "
+    },
+    {
+        "coin": "Novo",
+        "hashrate": "4240.00 Mh/s",
+        "power": "210.00 w",
+        "revenue": "$1.00 ",
+        "profit": "$0.64 ",
+        "rev_24h": "$1.00 ",
+        "profit_24h": "$0.65 "
+    },
+    {
+        "coin": "GamePass",
+        "hashrate": "66.07 Mh/s",
+        "power": "429.00 w",
+        "revenue": "$1.31 ",
+        "profit": "$0.59 ",
+        "rev_24h": "$1.29 ",
+        "profit_24h": "$0.57 "
+    },
+    {
+        "coin": "Zano",
+        "hashrate": "71.42 Mh/s",
+        "power": "469.00 w",
+        "revenue": "$1.37 ",
+        "profit": "$0.58 ",
+        "rev_24h": "$1.68 ",
+        "profit_24h": "$0.89 "
+    },
+    {
+        "coin": "Paprikacoin",
+        "hashrate": "66.07 Mh/s",
+        "power": "429.00 w",
+        "revenue": "$1.30 ",
+        "profit": "$0.58 ",
+        "rev_24h": "$1.22 ",
+        "profit_24h": "$0.50 "
+    },
+    {
+        "coin": "Chinet",
+        "hashrate": "71.42 Mh/s",
+        "power": "469.00 w",
+        "revenue": "$1.36 ",
+        "profit": "$0.58 ",
+        "rev_24h": "$1.47 ",
+        "profit_24h": "$0.68 "
     }
 ]

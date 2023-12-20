@@ -1,4 +1,5 @@
 import json
+import os
 
 import requests
 from bs4 import BeautifulSoup
@@ -90,6 +91,12 @@ def close_driver(driver: webdriver.Chrome) -> None:
     driver.quit()
 
 
+def delete_file(file_name: str) -> None:
+    """    Deletes a file if it exists.    """
+    if os.path.isfile(file_name):
+        os.remove(file_name)
+
+
 def write_to_file(filename: str, obj: list) -> None:
     with open(filename, 'w', encoding='utf-8') as file:
         json.dump(obj, file, ensure_ascii=False, indent=4)
@@ -97,6 +104,7 @@ def write_to_file(filename: str, obj: list) -> None:
 
 def parser_hashrate_selenium() -> None:
     URL = URL_hashrate_no
+    FILE_NAME = 'get_profit_gpu.json'
 
     DATA_XPATH_KWH = "//input[@class='calcBoxInput' and @name='kwh']"
     CLICK_BUTTON_CALCULATOR = "inputSubmit"
@@ -106,15 +114,16 @@ def parser_hashrate_selenium() -> None:
 
     response = requests.get(URL)
     if response.status_code == 200:
+        delete_file(FILE_NAME)
         input_data(driver, DATA_XPATH_KWH, ELECTRICITY_COST)
         click_button(driver, CLICK_BUTTON_CALCULATOR)
         get_profit = fetch_data(driver)
-        write_to_file('get_profit_gpu.json', get_profit)
+        write_to_file(FILE_NAME, get_profit)
     else:
         print(f"{response.status_code} - {response.text}")
 
     close_driver(driver)
 
-
-if __name__ == '__main__':
-    parser_hashrate_selenium()
+#
+# if __name__ == '__main__':
+#     parser_hashrate_selenium()

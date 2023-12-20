@@ -98,7 +98,7 @@ def stop_miner():
 def update_profit_parser():
     while True:
         parser_hashrate_selenium()
-        time.sleep(1 * 10 * 60)
+        time.sleep(1 * 30 * 60)
 
 
 def find_miner_coin(coins: list, miner_paths: dict):
